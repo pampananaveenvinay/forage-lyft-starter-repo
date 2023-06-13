@@ -1,0 +1,51 @@
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class BatteryTest {
+    private Battery battery;
+
+    @Before
+    public void setUp() {
+        battery = new Battery();
+    }
+
+    @Test
+    public void testInitialCharge() {
+        Assert.assertEquals(100, battery.getCharge());
+    }
+
+    @Test
+    public void testDischarge() {
+        battery.discharge(50);
+        Assert.assertEquals(50, battery.getCharge());
+    }
+
+    @Test
+    public void testCharge() {
+        battery.charge(30);
+        Assert.assertEquals(130, battery.getCharge());
+    }
+}
+
+public class EngineTest {
+    private Engine engine;
+
+    @Before
+    public void setUp() {
+        engine = new Engine();
+    }
+
+    @Test
+    public void testStart() {
+        engine.start();
+        Assert.assertTrue(engine.isRunning());
+    }
+
+    @Test
+    public void testStop() {
+        engine.start();
+        engine.stop();
+        Assert.assertFalse(engine.isRunning());
+    }
+}
