@@ -1,0 +1,53 @@
+UPDATING SPINDLER BATTERY
+
+public class SpindlerBattery {
+    private int serviceIntervalYears;
+
+    public SpindlerBattery() {
+        serviceIntervalYears = 3;
+    }
+
+    public int getServiceIntervalYears() {
+        return serviceIntervalYears;
+    }
+}
+In the above code, the SpindlerBattery class has a private variable serviceIntervalYears which represents the service interval. It is initialized to 3 in the constructor.
+
+This encapsulated design allows for easy modification of the service interval by simply updating the value of serviceIntervalYears in one place within the class. The rest of the codebase can continue to use the SpindlerBattery class without being directly affected by this change.
+
+By following this approach, the codebase remains clean, maintainable, and easier to understand, especially for engineers who are new to the codebase.
+
+
+ADDING TIRE SERVICE CRITERIA
+
+public class SpindlerBattery {
+    private int batteryServiceIntervalYears;
+    private int tireServiceIntervalMonths;
+
+    public SpindlerBattery() {
+        batteryServiceIntervalYears = 3;
+        tireServiceIntervalMonths = 6;
+    }
+
+    public int getBatteryServiceIntervalYears() {
+        return batteryServiceIntervalYears;
+    }
+
+    public int getTireServiceIntervalMonths() {
+        return tireServiceIntervalMonths;
+    }
+
+    // Other methods and implementation details
+}
+In the updated code, the SpindlerBattery class now includes an additional private variable tireServiceIntervalMonths, representing the tire servicing interval. It is initialized to 6 months in the constructor.
+
+The getTireServiceIntervalMonths() method provides access to the tire servicing interval value.
+
+By encapsulating the tire servicing criteria within the SpindlerBattery class, the codebase maintains a modular and organized structure. This approach allows for easy modification and management of the tire servicing interval, similar to the battery service interval. Other parts of the codebase can access the tire servicing criteria through the appropriate methods of the SpindlerBattery class without directly dealing with the implementation details.
+
+
+
+
+
+
+
